@@ -1,9 +1,25 @@
-mesa (9.1.1-0ubuntu3~bpo70+1) wheezy-backports; urgency=low
+mesa (9.1.2-0ubuntu1~bpo70+1) wheezy-backports; urgency=low
 
   * Rebuild for wheezy-backports.
   * Upload to wheezy-graphics-next
 
  -- Alexey Bondarchuk <alexey.bondarchuk@aleax.me>  Sun, 28 Apr 2013 17:57:40 +0300
+
+mesa (9.1.2-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream bug-fix release.
+  * Drop upstream patches:
+     - 0001-nv50-fix-3D-render-target-setup.patch
+     - 0002-nv50-nvc0-disable-DEPTH_RANGE_NEAR-FAR-clipping-duri.patch
+     - 0003-nv50-nvc0-fix-3d-blits-restore-viewport-after-blit.patch
+     - 0004-nvc0-fix-for-2d-engine-R-source-formats-writing-RRR1.patch
+     - 100_no_abi_tag.patch
+     - 119-libllvmradeon-link.patch
+     - vbo-fix-crash.diff
+  * debian/patches/117-static-gallium.patch: Refresh for minor change
+    in 9.1.2
+
+ -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 01 May 2013 16:40:16 -0400
 
 mesa (9.1.1-0ubuntu3) raring; urgency=low
 
@@ -33,7 +49,7 @@ mesa (9.1.1-0ubuntu1) raring; urgency=low
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Tue, 16 Apr 2013 15:35:32 +0300
 
-mesa (9.1.1-1) UNRELEASED; urgency=low
+mesa (9.1.2-1) UNRELEASED; urgency=low
 
   * New upstream release.
     - Set close on exec flag when opening dri devices (Closes: #651370).
@@ -94,6 +110,10 @@ mesa (9.1.1-1) UNRELEASED; urgency=low
   * Drop xutils-dev build dep, makedepend is no longer required
   * Recommend libtxc-dxtn0 in libgl1-mesa-dri for easier use with multiarch
     installs (Closes: #668645).
+  * Drop 02_use-ieee-fp-on-s390-and-m68k.patch, upstream in 9.1.2.
+  * Drop 10-hurd-configure-tweaks.diff, upstream in 9.1.2.
+  * Drop 14-fix-osmesa-build.diff, 15-fix-oot-build.diff and 
+    16-avoid-symbols-from-static-llvm.diff also in 9.1.2.
 
   [ Sven Joachim ]
   * Bump libdrm-dev build-dependency to 2.4.42.
